@@ -41,13 +41,25 @@
             line-height: 1.6;
         }
 
-         .paragraph-container {
-            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
-            padding: 20px; /* Add padding for better readability */
-            border-radius: 10px; /* Add rounded corners */
-            margin: 50px; /* Add margin to separate from the edges */
-            text-align: center;
-        }
+       .paragraph-container {
+    background-color: rgba(55, 71, 79, 0.7); /* Semi-transparent dark blue-gray background */
+    color: #fff; /* White text color */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 50px;
+    text-align: center;
+}
+
+.paragraph-container h1 {
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background for h1 */
+    -webkit-background-clip: text;
+    color: transparent; /* Make the text transparent so the gradient background shows through */
+}
+
+.paragraph-container p {
+    color: #fff; /* White color for paragraphs */
+}
+
         
         .selection-buttons, .wallet-actions {
             display: flex;
