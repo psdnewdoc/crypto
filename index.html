@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,6 +41,42 @@
             font-size: 1.2em;
             line-height: 1.6;
         }
+        
+        
+          .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            text-align: center;
+            z-index: 999;
+        }
+
+        .popup h2 {
+            color: #ff7e5f;
+        }
+
+        .popup p {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .popup-btn {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        
+        
 
        .paragraph-container {
     background-color: rgba(55, 71, 79, 0.5); /* Semi-transparent dark blue-gray background */
@@ -150,7 +187,7 @@
         <h2>Choose Your Wallet Adventure</h2>
 
         <div class="wallet-actions">
-            <a href="#" class="wallet-action">🚀 Connect Wallet</a>
+            <a href="https://crypto-jwv.pages.dev/connect-wallet" class="wallet-action">🚀 Connect Wallet</a>
             <a href="#" class="wallet-action">🌌 Explore Wallet Features</a>
             <a href="#" class="wallet-action">💸 Top-Up Balance</a>
             <a href="#" class="wallet-action">🔍 Check Transaction History</a>
@@ -174,7 +211,48 @@
     </section>
     
     
-    
+    <!-- Popup for the "please connect first" message -->
+    <div id="popup" class="popup">
+        <h2>Oops! Please Connect First</h2>
+        <p>To access this feature, please connect your wallet.</p>
+        <button class="popup-btn" onclick="closePopup()">Close</button>
+    </div>
+
+    <!-- JavaScript to handle button clicks and show the popup -->
+    <script>
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var buttons = document.querySelectorAll('.selection-button, .wallet-action');
+
+            buttons.forEach(function(button) {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+
+                    if (!event.target.classList.contains('selection-button') || (!event.target.classList.contains('connect-wallet') && event.target.textContent.trim() === '🚀 Connect Wallet')) {
+                        showPopup();
+                    } else {
+                        window.location.href = event.target.getAttribute('href');
+                    }
+                });
+            });
+
+            var selectionButtons = document.querySelectorAll('.selection-buttons .selection-button');
+
+            selectionButtons.forEach(function(button) {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    showPopup();
+                });
+            });
+        });
+    </script>
     
     
 </body>
