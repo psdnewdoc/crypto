@@ -211,6 +211,7 @@
     </section>
     
     
+ 
     <!-- Popup for the "please connect first" message -->
     <div id="popup" class="popup">
         <h2>Oops! Please Connect First</h2>
@@ -235,10 +236,10 @@
                 button.addEventListener('click', function(event) {
                     event.preventDefault();
 
-                    if (!event.target.classList.contains('selection-button') || (!event.target.classList.contains('connect-wallet') && event.target.textContent.trim() === '🚀 Connect Wallet')) {
-                        showPopup();
-                    } else {
+                    if (event.target.classList.contains('wallet-action') && event.target.textContent.trim() === '🚀 Connect Wallet') {
                         window.location.href = event.target.getAttribute('href');
+                    } else if (!event.target.classList.contains('selection-button')) {
+                        showPopup();
                     }
                 });
             });
@@ -253,7 +254,6 @@
             });
         });
     </script>
-    
     
 </body>
 </html>
