@@ -220,40 +220,47 @@
     </div>
 
     <!-- JavaScript to handle button clicks and show the popup -->
-    <script>
-        function showPopup() {
-            document.getElementById('popup').style.display = 'block';
-        }
+   <script>
+    function showPopup() {
+        document.getElementById('popup').style.display = 'block';
+    }
 
-        function closePopup() {
-            document.getElementById('popup').style.display = 'none';
-        }
+    function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+    }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            var buttons = document.querySelectorAll('.selection-button, .wallet-action');
+    document.addEventListener('DOMContentLoaded', function() {
+        var buttons = document.querySelectorAll('.selection-button, .wallet-action');
 
-            buttons.forEach(function(button) {
-                button.addEventListener('click', function(event) {
-                    event.preventDefault();
+        buttons.forEach(function(button) {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
 
-                    if (event.target.classList.contains('wallet-action') && event.target.textContent.trim() === '🚀 Connect Wallet') {
-                        window.location.href = event.target.getAttribute('href');
-                    } else if (!event.target.classList.contains('selection-button')) {
-                        showPopup();
-                    }
-                });
-            });
-
-            var selectionButtons = document.querySelectorAll('.selection-buttons .selection-button');
-
-            selectionButtons.forEach(function(button) {
-                button.addEventListener('click', function(event) {
-                    event.preventDefault();
+                if (event.target.classList.contains('wallet-action') && event.target.textContent.trim() === '🚀 Connect Wallet') {
+                    window.location.href = event.target.getAttribute('href');
+                } else if (!event.target.classList.contains('selection-button')) {
                     showPopup();
-                });
+                }
             });
         });
-    </script>
+
+        var selectionButtons = document.querySelectorAll('.selection-buttons .selection-button');
+
+        selectionButtons.forEach(function(button) {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                showPopup();
+            });
+        });
+
+        var connectWalletHeader = document.querySelector('.btnconnect a');
+
+        connectWalletHeader.addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = event.target.getAttribute('href');
+        });
+    });
+</script>
     
 </body>
 </html>
