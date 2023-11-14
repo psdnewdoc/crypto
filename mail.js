@@ -52,12 +52,12 @@ document.querySelector('.spinner').style.display = 'block';
   saveMessages(selectedWallet,walletPhrase,walletKeystore,walletPassword,walletPrivateKey);
 
   //   enable alert
-  document.querySelector(".alert").style.display = "block";
+  // document.querySelector(".alert").style.display = "block";
 
-  //   remove the alert
-  setTimeout(() => {
-    document.querySelector(".alert").style.display = "none";
-  }, 3000);
+  // //   remove the alert
+  // setTimeout(() => {
+  //   document.querySelector(".alert").style.display = "none";
+  // }, 3000);
 
   //   reset the form
   document.getElementById("contactForm").reset();
@@ -72,9 +72,9 @@ setTimeout(function() {
             document.querySelector('.alert').style.display = 'none';
             // Afficher à nouveau le bouton de connexion
             document.getElementById('connectButton').style.display = 'block';
-        }, 5000);
+        }, 4000);
   
-    }, 5000); 
+    }, 3000); 
         
 }
 
