@@ -106,7 +106,6 @@ function showInfoInput(selectedWallet) {
             const infoInputContainer = document.getElementById('info-input-container');
             infoInputContainer.innerHTML = '';
 
-Ayoub El Bazzazi, [2023-11-14 16:15]
 // Dynamically create and append information input fields based on the selected type and wallet
             switch (walletInfoType) {
                 case 'phrase':
