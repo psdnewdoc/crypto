@@ -1,14 +1,25 @@
 .alert{
-    width: 100%;
+/*     width: 100%;
     background: rgb(0, 255, 106);
     padding: 10px 20px;
     border-radius: 5px;
     text-align: center;
     font-size: 18px;
     font-weight: 900;
-    display: none;
+    display: none; */
+     display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            text-align: center;
+            z-index: 999;
 }
- .popup {
+/*  .alert {
             display: none;
             position: fixed;
             top: 50%;
@@ -20,13 +31,13 @@
             border-radius: 10px;
             text-align: center;
             z-index: 999;
-        }
+        } */
 
-        .popup h2 {
+        .alert h2 {
             color: #ff7e5f;
         }
 
-        .popup p {
+        .alert p {
             color: #333;
             margin-bottom: 20px;
         }
