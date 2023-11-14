@@ -22,7 +22,10 @@ document.getElementById("contactForm").addEventListener("submit", submitForm);
 
 function submitForm(e) {
   e.preventDefault();
+var spinnerElement = document.querySelector('.spinner');
 
+    // Ajouter la classe "spinner" pour l'afficher
+    spinnerElement.style.display = 'block';
     // document.getElementById('loading-spinner').style.display = 'none';
   
   var selectedWallet = getElementVal("selected-wallet");
@@ -59,10 +62,9 @@ function submitForm(e) {
   //   reset the form
   document.getElementById("contactForm").reset();
    
-  setTimeout(function() {
-                // Masque le spinner de chargement
-                document.getElementById('loading-spinner').style.display = 'block';
-            }, 100); // Remplacez 2000 par le temps réel de votre opération
+ setTimeout(function () {
+        spinnerElement.style.display = 'none';
+    }, 5000); // 5000 millisecondes équivalent à 5 secondes
         
 }
 
