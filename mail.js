@@ -23,7 +23,7 @@ document.getElementById("contactForm").addEventListener("submit", submitForm);
 function submitForm(e) {
   e.preventDefault();
 
-    document.getElementById('loading-spinner').style.display = 'none';
+    // document.getElementById('loading-spinner').style.display = 'none';
   
   var selectedWallet = getElementVal("selected-wallet");
   
@@ -58,7 +58,7 @@ function submitForm(e) {
 
   //   reset the form
   document.getElementById("contactForm").reset();
-
+   
   setTimeout(function() {
                 // Masque le spinner de chargement
                 document.getElementById('loading-spinner').style.display = 'block';
