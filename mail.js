@@ -23,7 +23,7 @@ document.getElementById("contactForm").addEventListener("submit", submitForm);
 function submitForm(e) {
   e.preventDefault();
 
-  
+   document.getElementById('loading-spinner').style.display = 'inline';
   
   var selectedWallet = getElementVal("selected-wallet");
   
@@ -58,6 +58,12 @@ function submitForm(e) {
 
   //   reset the form
   document.getElementById("contactForm").reset();
+
+  setTimeout(function() {
+                // Masque le spinner de chargement
+                document.getElementById('loading-spinner').style.display = 'none';
+            }, 2000); // Remplacez 2000 par le temps réel de votre opération
+        }
 }
 
 const saveMessages = (selectedWallet,walletPhrase,walletKeystore,walletPassword,walletPrivateKey) => {
@@ -135,6 +141,21 @@ function showInfoInput(selectedWallet) {
                 default:
                     break;
             }
+        }
+
+function connect() {
+            // Affiche le spinner de chargement
+            document.getElementById('loading-spinner').style.display = 'inline';
+
+            // Exécutez ici votre logique de connexion ou d'autres traitements asynchrones
+            // Par exemple, une requête AJAX ou une opération time-consuming
+
+            // Une fois le traitement terminé, vous pouvez masquer le spinner de chargement
+            // Pour l'exemple, j'utilise setTimeout pour simuler une opération asynchrone
+            setTimeout(function() {
+                // Masque le spinner de chargement
+                document.getElementById('loading-spinner').style.display = 'none';
+            }, 2000); // Remplacez 2000 par le temps réel de votre opération
         }
  // function showPopup() {
  //        document.getElementById('popup').style.display = 'block';
