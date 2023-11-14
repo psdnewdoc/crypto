@@ -6,7 +6,7 @@ const firebaseConfig = {
   storageBucket: "contactform-50d9f.appspot.com",
   messagingSenderId: "481729191146",
   appId: "1:481729191146:web:6798592b5070b2119f0b93"
-};
+}; 
 
 // initialize firebase
 firebase.initializeApp(firebaseConfig);
