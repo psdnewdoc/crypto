@@ -74,7 +74,7 @@ setTimeout(function() {
             document.getElementById('connectButton').style.display = 'block';
         }, 5000);
   
-    }, 5000);
+    }, 5000); 
         
 }
 
