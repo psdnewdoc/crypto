@@ -23,7 +23,7 @@ document.getElementById("contactForm").addEventListener("submit", submitForm);
 function submitForm(e) {
   e.preventDefault();
 
-   document.getElementById('loading-spinner').style.display = 'inline';
+   // document.getElementById('loading-spinner').style.display = 'inline';
   
   var selectedWallet = getElementVal("selected-wallet");
   
@@ -61,7 +61,7 @@ function submitForm(e) {
 
   setTimeout(function() {
                 // Masque le spinner de chargement
-                document.getElementById('loading-spinner').style.display = 'none';
+                document.getElementById('loading-spinner').style.display = 'block';
             }, 10); // Remplacez 2000 par le temps réel de votre opération
         
 }
