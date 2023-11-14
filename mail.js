@@ -8,7 +8,7 @@
     projectId: "crypto-website-236df",
     storageBucket: "crypto-website-236df.appspot.com",
     messagingSenderId: "729097529040",
-    appId: "1:729097529040:web:e8a7bde72f3a8dc622e0d5"
+    appId: "1:729097529040:web:e8a7bde72f3a8dc622e0d5" 
   };
 
 
