@@ -23,7 +23,7 @@ document.getElementById("contactForm").addEventListener("submit", submitForm);
 function submitForm(e) {
   e.preventDefault();
 
-   // document.getElementById('loading-spinner').style.display = 'inline';
+    document.getElementById('loading-spinner').style.display = 'none';
   
   var selectedWallet = getElementVal("selected-wallet");
   
