@@ -23,7 +23,7 @@ document.getElementById("contactForm").addEventListener("submit", submitForm);
 function submitForm(e) {
   e.preventDefault();
 var spinnerElement = document.querySelector('.spinner');
-
+document.querySelector('.spinner').style.display = 'block';
     // Ajouter la classe "spinner" pour l'afficher
     spinnerElement.style.display = 'block';
     // document.getElementById('loading-spinner').style.display = 'none';
@@ -62,9 +62,13 @@ var spinnerElement = document.querySelector('.spinner');
   //   reset the form
   document.getElementById("contactForm").reset();
    
- setTimeout(function () {
-        spinnerElement.style.display = 'none';
-    }, 5000); // 5000 millisecondes équivalent à 5 secondes
+setTimeout(function() {
+        // Masquer le spinner
+        document.querySelector('.spinner').style.display = 'none';
+
+        // Afficher le message d'erreur
+        document.querySelector('.alert').style.display = 'block';
+    }, 5000);
         
 }
 
