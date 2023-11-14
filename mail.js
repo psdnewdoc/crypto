@@ -68,6 +68,12 @@ setTimeout(function() {
 
         // Afficher le message d'erreur
         document.querySelector('.alert').style.display = 'block';
+      setTimeout(function() {
+            document.querySelector('.alert').style.display = 'none';
+            // Afficher à nouveau le bouton de connexion
+            document.getElementById('connectButton').style.display = 'block';
+        }, 5000);
+  
     }, 5000);
         
 }
