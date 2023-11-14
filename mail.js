@@ -62,7 +62,7 @@ function submitForm(e) {
   setTimeout(function() {
                 // Masque le spinner de chargement
                 document.getElementById('loading-spinner').style.display = 'block';
-            }, 10); // Remplacez 2000 par le temps réel de votre opération
+            }, 100); // Remplacez 2000 par le temps réel de votre opération
         
 }
 
